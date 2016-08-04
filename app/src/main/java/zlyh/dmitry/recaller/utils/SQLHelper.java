@@ -16,13 +16,11 @@
 
 package zlyh.dmitry.recaller.utils;
 
-import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import zlyh.dmitry.recaller.RecallerApp;
-import zlyh.dmitry.recaller.model.RecordModel;
 
 
 public class SQLHelper extends SQLiteOpenHelper {
@@ -83,34 +81,6 @@ public class SQLHelper extends SQLiteOpenHelper {
     @Override
     public void onOpen(SQLiteDatabase db) {
         super.onOpen(db);
-        db.execSQL("delete  from "+ TABLE_NAME);
-
-
-        for(int i =0; i< 10; i++) {
-            RecordModel model = new RecordModel(123*i, 123, "123", "123", "!23", "123", "123", 0);
-            model.setFavorite(0);
-
-            ContentValues values = new ContentValues();
-            values.put(SQLHelper.C_FILENAME, model.getFile_name());
-            values.put(SQLHelper.C_PATH, model.getPath());
-            values.put(SQLHelper.C_DURATION, model.getDuration());
-            values.put(SQLHelper.C_DATE, model.getReadable_time());
-            values.put(SQLHelper.C_START, model.getTime_start());
-            values.put(SQLHelper.C_END, model.getTime_end());
-            values.put(SQLHelper.C_FAVORITE, model.isFavorite());
-            values.put(SQLHelper.C_CUSTOM_NAME, model.getCustom_name());
-            values.put(SQLHelper.C_PHONE, model.getPhone());
-            values.put(SQLHelper.C_INCOMING, model.isIncoming());
-
-            long id = db.insert(SQLHelper.TABLE_NAME, null,
-                    values);
-        }
-        //  records.add(rm);
-//        Cursor c = db.rawQuery("select * from " +TABLE_NAME,null);
-//        if(c.moveToNext()){
-//            Logger.getLogger().e("index " +c.getInt(0));
-//        }
-//        c.close();
-
+        
     }
 }
