@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="3dp"
+    app:contentPadding="3dp"
+    android:layout_margin="3dp"
+    android:layout_height="wrap_content">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:id="@+id/root"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/left"
+android:layout_centerInParent="true"
+            android:gravity="center"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="10dp"
+            android:layout_alignBottom="@+id/right"
+            android:layout_alignParentLeft="true"
+            android:paddingTop="5dp"
+            android:layout_alignParentTop="true"
+            android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:src="@android:drawable/sym_call_outgoing"
+            android:id="@+id/img"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:id="@+id/duration"
+            android:text="3m 2s"
+            android:textColor="@color/black"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/right"
+            android:layout_toRightOf="@+id/left"
+            android:layout_alignParentRight="true"
+            android:gravity="center"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/text"
+                android:text="text"
+                android:ellipsize="end"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/date"
+                android:text="17 december"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/phone"
+                android:layout_weight="1"
+                android:text="8485883822"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:padding="3dp"
+        android:layout_height="42dp">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:id="@+id/playstop"
+            android:layout_gravity="center"
+            android:layout_height="match_parent" />
+
+
+        <ImageView
+            android:layout_width="0dp"
+            android:id="@+id/favorite"
+            android:layout_weight="1"
+            android:src="@android:drawable/star_off"
+            android:layout_height="match_parent" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:id="@+id/edit"
+            android:padding="5dp"
+            android:src="@android:drawable/ic_menu_edit"
+            android:layout_gravity="center"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+</LinearLayout>
+    </android.support.v7.widget.CardView>

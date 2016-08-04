@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/remove_short"
+        android:title="@string/cleanup_10_sec"
+        app:showAsAction="never"
+        />
+    <item android:id="@+id/disable_notif"
+        android:title="@string/disable_notification"
+        app:showAsAction="never"
+        />
+</menu>

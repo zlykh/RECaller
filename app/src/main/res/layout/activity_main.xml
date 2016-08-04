@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="zlyh.dmitry.recaller.MainActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:background="@color/white"
+            app:layout_scrollFlags="scroll|enterAlwaysCollapsed"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:text="Call record Settings"
+                android:id="@+id/anchor"
+                android:layout_height="wrap_content" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:id="@+id/call_in"
+                android:layout_below="@+id/anchor"
+                android:layout_alignParentLeft="true"
+                android:checked="false"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:text="Record incoming"
+                android:layout_height="wrap_content" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:id="@+id/call_out"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+
+                android:layout_below="@+id/anchor"
+                android:layout_alignParentRight="true"
+                android:text="Record outgoing"
+                android:checked="false"
+                android:layout_marginBottom="5dp"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:id="@+id/post"
+                android:visibility="gone"
+                android:text="bpost"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:background="@color/colorAccent"
+                android:layout_below="@+id/call_out"
+                android:layout_height="1dp"></LinearLayout>
+        </RelativeLayout>
+    </android.support.design.widget.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:layout_height="match_parent">
+
+
+<android.support.v7.widget.RecyclerView
+    android:layout_width="match_parent"
+    android:id="@+id/list"
+    android:layout_weight="1"
+    android:layout_height="0dp"/>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            app:layout_scrollFlags="scroll|enterAlwaysCollapsed"
+            android:layout_gravity="bottom"
+            android:background="@color/white"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:background="@color/colorAccent"
+                android:layout_height="1dp"></LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Filter settings"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/black"
+                android:layout_gravity="center_horizontal"
+                android:layout_centerVertical="true"
+                android:layout_marginBottom="3dp"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:gravity="center"
+                android:layout_height="wrap_content">
+
+                <CheckBox
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:text="Incoming"
+                    android:id="@+id/incoming_filter"
+                    android:layout_height="wrap_content" />
+
+                <CheckBox
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:text="Outgoing"
+                    android:id="@+id/outgoing_filter"
+                    android:layout_height="wrap_content" />
+
+                <CheckBox
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:checked="false"
+                    android:id="@+id/favorites_filter"
+                    android:text="Favorites"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:id="@+id/nocalls"
+        android:gravity="center"
+        android:visibility="gone"
+        android:text="@string/no_calls"
+        android:layout_height="match_parent"/>
+</android.support.design.widget.CoordinatorLayout>
