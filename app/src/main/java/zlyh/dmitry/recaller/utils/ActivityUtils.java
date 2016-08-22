@@ -34,16 +34,30 @@ public class ActivityUtils {
 
     public static void registerReceivers(MainActivity activity) {
         final ArrayList<BroadcastReceiver> receivers = activity.getReceivers();
-        receivers.add(new PlayerReceiver(activity));
-        receivers.add(new PreferencesReceiver(activity));
-        receivers.add(new SqlReceiver(activity));
-        receivers.add(new ViewholderReceiver(activity));
+        BroadcastReceiver receiver;
+        IntentFilter filter;
 
-        IntentFilter filter = new IntentFilter(Const.BROADCAST);
+        receiver = new PlayerReceiver(activity);
+        filter = new IntentFilter(Const.PlayerService.BROADCAST);
+        receivers.add(receiver);
+        LocalBroadcastManager.getInstance(activity).registerReceiver(receiver, filter);
 
-        for(BroadcastReceiver receiver : receivers) {
-            LocalBroadcastManager.getInstance(activity).registerReceiver(receiver, filter);
-        }
+        receiver = new PreferencesReceiver(activity);
+        filter = new IntentFilter(Const.Prefs.BROADCAST);
+        receivers.add(receiver);
+        LocalBroadcastManager.getInstance(activity).registerReceiver(receiver, filter);
+
+        receiver = new SqlReceiver(activity);
+        filter = new IntentFilter(Const.SqlService.BROADCAST);
+        receivers.add(receiver);
+        LocalBroadcastManager.getInstance(activity).registerReceiver(receiver, filter);
+
+        receiver = new ViewholderReceiver(activity);
+        filter = new IntentFilter(Const.Viewholder.BROADCAST);
+        receivers.add(receiver);
+        LocalBroadcastManager.getInstance(activity).registerReceiver(receiver, filter);
+
+
     }
 
     public static void unregisterReceivers(MainActivity activity){

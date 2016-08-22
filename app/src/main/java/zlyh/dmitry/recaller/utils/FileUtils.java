@@ -29,7 +29,7 @@ public class FileUtils {
         Intent intent = new Intent(RecallerApp.getAppContext(), FileService.class);
         intent.putExtra(Const.COMMAND, Const.FileService.RENAME);
         intent.putExtra(Const.FileService.FILE_PATH, record.getPath());
-        intent.putExtra(Const.FileService.NEW_FILE_NAME, record.getCustom_name() );
+        intent.putExtra(Const.FileService.CUSTOM_FILE_NAME, record.getCustom_name() );
         RecallerApp.getAppContext().startService(intent);
     }
 
@@ -37,6 +37,7 @@ public class FileUtils {
         Intent intent = new Intent(RecallerApp.getAppContext(), FileService.class);
         intent.putExtra(Const.COMMAND, Const.FileService.DELETE);
         intent.putExtra(Const.FileService.FILE_PATH, record.getPath());
+        intent.putExtra(Const.FileService.CUSTOM_FILE_NAME, record.getCustom_name() );
         RecallerApp.getAppContext().startService(intent);
     }
 }

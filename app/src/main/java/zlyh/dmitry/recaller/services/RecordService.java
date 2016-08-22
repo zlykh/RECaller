@@ -152,7 +152,7 @@ public class RecordService extends Service {
     }
 
     private void localBroadcast(int command) {
-        Intent status_broadcast = new Intent(Const.BROADCAST).putExtra(Const.COMMAND, command);
+        Intent status_broadcast = new Intent(Const.RecordService.BROADCAST).putExtra(Const.COMMAND, command);
         LocalBroadcastManager.getInstance(this).sendBroadcast(status_broadcast);
     }
 

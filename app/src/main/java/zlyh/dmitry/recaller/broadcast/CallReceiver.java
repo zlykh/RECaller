@@ -59,7 +59,7 @@ public class CallReceiver extends BroadcastReceiver {
                 temp_number = intent.getStringExtra(TelephonyManager.EXTRA_INCOMING_NUMBER);
             }
         }
-            if (intent.getAction().equals(Const.BROADCAST)) {
+            if (intent.getAction().equals(Const.Prefs.BROADCAST)) {
                 switch (intent.getIntExtra(Const.COMMAND, -1)) {
                     case Const.Prefs.CALLS_SAVE:
                         allow_incoming_record = intent.getBooleanExtra(Const.Prefs.REC_IN_OPTION, true);

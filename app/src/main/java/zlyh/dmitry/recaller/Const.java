@@ -17,12 +17,13 @@
 package zlyh.dmitry.recaller;
 
 public class Const {
-    public static final String BROADCAST = RecallerApp.PACKAGE.concat(".BROADCAST");
     public static final String COMMAND = "command";
-
     public static final String MODEL = "model";
 
+
     public static class Prefs{
+        public static final String BROADCAST = RecallerApp.PACKAGE.concat(".PREFS_BROADCAST");
+
         public static final String INC_FILTER_OPTION = "incoming_filter";
         public static final String OUT_FILTER_OPTION = "outgoing_filter";
         public static final String FAV_FILTER_OPTION = "favorites_filter";
@@ -46,6 +47,7 @@ public class Const {
     }
 
     public static class SqlService {
+        public static final String BROADCAST = RecallerApp.PACKAGE.concat(".SQL_BROADCAST");
         public static final String LOAD_CHUNK = "chunk";
 
         public static final int LOAD = 0;
@@ -54,12 +56,16 @@ public class Const {
     }
 
     public static class RecordService {
+        public static final String BROADCAST = RecallerApp.PACKAGE.concat(".RECORD_BROADCAST");
+
         public static final int START = 0;
         public static final int STOP = 1;
     }
 
     public static class FileService {
-        public static final String NEW_FILE_NAME = "new_file_name";
+        public static final String BROADCAST = RecallerApp.PACKAGE.concat(".FILE_BROADCAST");
+
+        public static final String CUSTOM_FILE_NAME = "new_file_name";
         public static final String FILE_PATH = "filepath";
 
         public static final int DELETE = 0;
@@ -67,11 +73,15 @@ public class Const {
     }
 
     public static class PlayerService {
+        public static final String BROADCAST = RecallerApp.PACKAGE.concat(".PLAYER_BROADCAST");
+
         public static final int PLAY = 0;
         public static final int STOP = 1;
     }
 
     public static class Viewholder {
+        public static final String BROADCAST = RecallerApp.PACKAGE.concat(".VIEWHOLDER_BROADCAST");
+
         public static final int DELETE = 0;
         public static final int RENAME = 1;
         public static final int FAVORITE = 2;

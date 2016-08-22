@@ -16,16 +16,18 @@
 
 package zlyh.dmitry.recaller.threading;
 
+import android.util.Log;
+
 import java.io.File;
 
 import zlyh.dmitry.recaller.services.FileService;
 
-public class DeleteFileRunnable implements Runnable {
+public class FileDeleteRunnable implements Runnable {
 
     private final FileService fileService;
     private final String path;
 
-    public DeleteFileRunnable(FileService fileService, String path) {
+    public FileDeleteRunnable(FileService fileService, String path) {
         this.fileService = fileService;
         this.path = path;
     }
@@ -35,7 +37,8 @@ public class DeleteFileRunnable implements Runnable {
         try {
             File f = new File(path);
             if (f.exists()) {
-                f.delete();
+               boolean del = f.delete();
+                Log.e("1","del " +del + " path "+path);
             }
 
             fileService.decrement();

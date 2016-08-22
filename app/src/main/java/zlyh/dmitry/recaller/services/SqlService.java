@@ -22,12 +22,13 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v4.content.LocalBroadcastManager;
+import android.util.Log;
 
 import java.util.ArrayList;
 
 import zlyh.dmitry.recaller.Const;
-import zlyh.dmitry.recaller.utils.SQLHelper;
 import zlyh.dmitry.recaller.model.RecordModel;
+import zlyh.dmitry.recaller.utils.SQLHelper;
 
 public class SqlService extends IntentService {
 
@@ -58,7 +59,7 @@ public class SqlService extends IntentService {
             SQLHelper.C_ID+ " = ?",
             new String[]{String.valueOf(id)});
 
-            Intent delete_broadcast = new Intent(Const.BROADCAST).putExtra(Const.COMMAND, Const.SqlService.DELETE);
+            Intent delete_broadcast = new Intent(Const.SqlService.BROADCAST).putExtra(Const.COMMAND, Const.SqlService.DELETE);
             LocalBroadcastManager.getInstance(this).sendBroadcast(delete_broadcast);
         }
     }
@@ -91,9 +92,10 @@ public class SqlService extends IntentService {
         }
 
         cursor.close();
-
-        Intent model_broadcast = new Intent(Const.BROADCAST).putExtra(Const.COMMAND,Const.SqlService.LOAD)
+        Log.e("1","records " + records.size());
+        Intent model_broadcast = new Intent(Const.SqlService.BROADCAST).putExtra(Const.COMMAND,Const.SqlService.LOAD)
                 .putParcelableArrayListExtra(Const.MODEL,records);
+        Log.e("1","newlist " +model_broadcast.getExtras().toString());
         LocalBroadcastManager.getInstance(this).sendBroadcast(model_broadcast);
 
 
@@ -120,7 +122,7 @@ public class SqlService extends IntentService {
                 model.setId((int)id);
             }
 
-            Intent model_broadcast = new Intent(Const.BROADCAST).putExtra(Const.COMMAND,Const.SqlService.SAVE)
+            Intent model_broadcast = new Intent(Const.SqlService.BROADCAST).putExtra(Const.COMMAND,Const.SqlService.SAVE)
                     .putExtra(Const.MODEL,model);
             LocalBroadcastManager.getInstance(this).sendBroadcast(model_broadcast);
         }else{

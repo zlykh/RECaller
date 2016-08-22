@@ -85,6 +85,8 @@ public class RecordController extends RecyclerView.ViewHolder {
             public void onClick(View v) {
                 if(!record.is_playing) {
                     PlayerUtils.startPlayingTrack(record);
+                    //thread interrution is long, change state fast
+                    record.is_playing = true;
                 }else {
                     PlayerUtils.stopPlayingTrack();
                     //thread interrution is long, change state fast
@@ -219,7 +221,7 @@ public class RecordController extends RecyclerView.ViewHolder {
     }
 
     private void localBroadcast(int command){
-        Intent intent = new Intent(Const.BROADCAST).putExtra(Const.COMMAND,command)
+        Intent intent = new Intent(Const.Viewholder.BROADCAST).putExtra(Const.COMMAND,command)
                 .putExtra(Const.MODEL,record);
         LocalBroadcastManager.getInstance(itemView.getContext()).sendBroadcast(intent);
     }

@@ -69,7 +69,7 @@ public class PreferencesService extends IntentService {
 
     private void saveNotifiationPreferences(SharedPreferences preferences, boolean enabled) {
         preferences.edit().putBoolean(Const.Prefs.NOTIFICATION_OPTION,enabled).apply();
-        Intent intent = new Intent(Const.BROADCAST)
+        Intent intent = new Intent(Const.Prefs.BROADCAST)
                 .putExtra(Const.COMMAND,Const.Prefs.NOTIF_SAVE)
                 .putExtra(Const.Prefs.NOTIFICATION_OPTION,enabled);
 
@@ -78,7 +78,7 @@ public class PreferencesService extends IntentService {
     }
 
     private void loadNotificationPreferences(SharedPreferences preferences) {
-        Intent intent = new Intent(Const.BROADCAST)
+        Intent intent = new Intent(Const.Prefs.BROADCAST)
                 .putExtra(Const.COMMAND,Const.Prefs.NOTIF_LOAD)
                 .putExtra(Const.Prefs.NOTIFICATION_OPTION, preferences.getBoolean(Const.Prefs.NOTIFICATION_OPTION, true));
 
@@ -86,7 +86,7 @@ public class PreferencesService extends IntentService {
     }
 
     private void loadFilterPreferences(SharedPreferences preferences) {
-        Intent intent = new Intent(Const.BROADCAST)
+        Intent intent = new Intent(Const.Prefs.BROADCAST)
                 .putExtra(Const.COMMAND,Const.Prefs.FILTER_LOAD)
                 .putExtra(Const.Prefs.FAV_FILTER_OPTION, preferences.getBoolean(Const.Prefs.FAV_FILTER_OPTION, false))
                 .putExtra(Const.Prefs.INC_FILTER_OPTION, preferences.getBoolean(Const.Prefs.INC_FILTER_OPTION, true))
@@ -101,7 +101,7 @@ public class PreferencesService extends IntentService {
         preferences.edit().putBoolean(Const.Prefs.FAV_FILTER_OPTION,fav_filter).putBoolean(Const.Prefs.INC_FILTER_OPTION,inc_filter)
                 .putBoolean(Const.Prefs.OUT_FILTER_OPTION,out_filter).apply();
 
-        Intent intent = new Intent(Const.BROADCAST)
+        Intent intent = new Intent(Const.Prefs.BROADCAST)
                 .putExtra(Const.COMMAND,Const.Prefs.FILTER_SAVE)
                 .putExtra(Const.Prefs.FAV_FILTER_OPTION,fav_filter)
                 .putExtra(Const.Prefs.OUT_FILTER_OPTION,out_filter)
@@ -114,7 +114,7 @@ public class PreferencesService extends IntentService {
     private void savePreferences(SharedPreferences preferences, boolean in_record, boolean out_record){
         preferences.edit().putBoolean(Const.Prefs.REC_IN_OPTION,in_record).putBoolean(Const.Prefs.REC_OUT_OPTION,out_record).apply();
 
-        Intent intent = new Intent(Const.BROADCAST)
+        Intent intent = new Intent(Const.Prefs.BROADCAST)
                 .putExtra(Const.COMMAND,Const.Prefs.CALLS_SAVE)
                 .putExtra(Const.Prefs.REC_IN_OPTION,in_record)
                 .putExtra(Const.Prefs.REC_OUT_OPTION,out_record);
@@ -125,7 +125,7 @@ public class PreferencesService extends IntentService {
     }
 
     private void loadPreferences(SharedPreferences preferences){
-        Intent intent = new Intent(Const.BROADCAST)
+        Intent intent = new Intent(Const.Prefs.BROADCAST)
                 .putExtra(Const.COMMAND,Const.Prefs.CALLS_LOAD)
                 .putExtra(Const.Prefs.REC_IN_OPTION, preferences.getBoolean(Const.Prefs.REC_IN_OPTION, true))
                 .putExtra(Const.Prefs.REC_OUT_OPTION, preferences.getBoolean(Const.Prefs.REC_OUT_OPTION, true));

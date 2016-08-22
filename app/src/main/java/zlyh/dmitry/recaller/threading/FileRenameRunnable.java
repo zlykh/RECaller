@@ -20,24 +20,23 @@ import java.io.File;
 
 import zlyh.dmitry.recaller.services.FileService;
 
-public class RenameFileRunnable implements Runnable {
+public class FileRenameRunnable implements Runnable {
 
     private final FileService fileService;
     private final String path;
-    private String newname;
+    private final String newpath;
 
-    public RenameFileRunnable(FileService fileService, String path, String newname) {
+    public FileRenameRunnable(FileService fileService, String path, String newpath) {
         this.fileService = fileService;
         this.path = path;
-        this.newname = newname;
+        this.newpath = newpath;
     }
 
     @Override
     public void run() {
         try {
             File f = new File(path);
-            final String path_no_name=path.substring(0,path.lastIndexOf("/"));
-            File newfile = new File(path_no_name,newname);
+            File newfile = new File(newpath);
             f.renameTo(newfile);//ignore if failed
 
             fileService.decrement();

@@ -27,8 +27,8 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 import zlyh.dmitry.recaller.Const;
-import zlyh.dmitry.recaller.threading.DeleteFileRunnable;
-import zlyh.dmitry.recaller.threading.RenameFileRunnable;
+import zlyh.dmitry.recaller.threading.FileDeleteRunnable;
+import zlyh.dmitry.recaller.threading.FileRenameRunnable;
 
 public class FileService extends Service {
     private volatile int tasks_in_queue =0;
@@ -50,18 +50,25 @@ public class FileService extends Service {
     public int onStartCommand(Intent intent, int flags, int startId) {
         int command = intent.getIntExtra(Const.COMMAND, -1);
         final String path = intent.getStringExtra(Const.FileService.FILE_PATH);
+        final String path_no_name = path.substring(0,path.lastIndexOf("/"));
+        final String custom_name = intent.getStringExtra(Const.FileService.CUSTOM_FILE_NAME);
+        String new_path = path;
+        if(custom_name!=null && !custom_name.isEmpty()){
+            new_path = path_no_name.concat(custom_name);
+        }
         if(path!=null && !path.isEmpty()) {
 
             synchronized (this){
                 tasks_in_queue++;
             }
 
+
             switch (command) {
                 case Const.FileService.RENAME:
-                    executor.submit(new RenameFileRunnable(this, path, intent.getStringExtra(Const.FileService.NEW_FILE_NAME)));
+                    executor.submit(new FileRenameRunnable(this, path, new_path));
                     break;
                 case Const.FileService.DELETE:
-                    executor.submit(new DeleteFileRunnable(this, path));
+                    executor.submit(new FileDeleteRunnable(this, new_path));
                     break;
              }
         }
@@ -90,7 +97,7 @@ public class FileService extends Service {
     }
 
     private void broadcastDone() {
-        Intent intent = new Intent(Const.BROADCAST).putExtra(Const.COMMAND,Const.FileService.DELETE);
+        Intent intent = new Intent(Const.FileService.BROADCAST).putExtra(Const.COMMAND,Const.FileService.DELETE);
         LocalBroadcastManager.getInstance(this).sendBroadcast(intent);
 
     }

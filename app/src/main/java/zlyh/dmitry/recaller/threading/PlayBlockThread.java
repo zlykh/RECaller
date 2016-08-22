@@ -144,10 +144,10 @@ public class PlayBlockThread extends Thread {
     private void togglePlaying(boolean is_playing){
             Intent intent;
             if(is_playing) {
-                 intent = new Intent(Const.BROADCAST).putExtra(Const.COMMAND, Const.PlayerService.PLAY)
+                 intent = new Intent(Const.PlayerService.BROADCAST).putExtra(Const.COMMAND, Const.PlayerService.PLAY)
                         .putExtra(Const.MODEL, id);
             }else{
-                intent = new Intent(Const.BROADCAST).putExtra(Const.COMMAND, Const.PlayerService.STOP)
+                intent = new Intent(Const.PlayerService.BROADCAST).putExtra(Const.COMMAND, Const.PlayerService.STOP)
                         .putExtra(Const.MODEL, id);
             }
             LocalBroadcastManager.getInstance(RecallerApp.getAppContext()).sendBroadcast(intent);
