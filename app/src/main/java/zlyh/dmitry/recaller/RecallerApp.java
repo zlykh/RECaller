@@ -20,7 +20,6 @@ import android.app.Application;
 import android.content.Context;
 
 import com.karumi.dexter.Dexter;
-import com.squareup.leakcanary.LeakCanary;
 
 import zlyh.dmitry.recaller.utils.SQLHelper;
 
@@ -34,7 +33,6 @@ public class RecallerApp extends Application {
     public void onCreate() {
         super.onCreate();
         context = getApplicationContext();
-        LeakCanary.install(this);
         Dexter.initialize(context);
 
 
