@@ -1,5 +1,7 @@
 # RECaller
-RECaller is a call recording app for Androi
+RECaller is a call recording app for Android
+
+Published on Play Market: https://play.google.com/store/apps/details?id=zlyh.dmitry.recaller
 
 # Features
 Allows recording incoming & outgoing calls in background  
