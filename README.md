@@ -2,7 +2,7 @@
 RECaller is a call recording app for Android.
 The app is a showcase of various Android concurrency/multithreading techniques.
 
-<a href="https://play.google.com/store/apps/details?id=https://play.google.com/store/apps/details?id=zlyh.dmitry.recaller">
+<a href="https://play.google.com/store/apps/details?id=zlyh.dmitry.recaller">
   <img alt="Get it on Google Play"
        src="https://developer.android.com/images/brand/en_generic_rgb_wo_45.png" />
 </a>
