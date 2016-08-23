@@ -19,7 +19,7 @@
                 android:layout_width="match_parent"
                 android:gravity="center"
                 android:textColor="@color/black"
-                android:text="Call record Settings"
+                android:text="@string/call_record_settings"
                 android:id="@+id/anchor"
                 android:layout_height="wrap_content" />
 
@@ -30,7 +30,7 @@
                 android:layout_alignParentLeft="true"
                 android:checked="false"
                 android:layout_marginLeft="@dimen/activity_horizontal_margin"
-                android:text="Record incoming"
+                android:text="@string/record_incoming"
                 android:layout_height="wrap_content" />
 
             <CheckBox
@@ -40,7 +40,7 @@
 
                 android:layout_below="@+id/anchor"
                 android:layout_alignParentRight="true"
-                android:text="Record outgoing"
+                android:text="@string/record_outgoing"
                 android:checked="false"
                 android:layout_marginBottom="5dp"
                 android:layout_height="wrap_content" />
@@ -49,7 +49,6 @@
                 android:layout_width="wrap_content"
                 android:id="@+id/post"
                 android:visibility="gone"
-                android:text="bpost"
                 android:layout_height="wrap_content" />
 
             <LinearLayout
@@ -88,7 +87,7 @@
                 android:layout_height="1dp"></LinearLayout>
             <TextView
                 android:layout_width="wrap_content"
-                android:text="Filter settings"
+                android:text="@string/filter_settings"
                 android:layout_marginTop="5dp"
                 android:textColor="@color/black"
                 android:layout_gravity="center_horizontal"
@@ -108,7 +107,7 @@
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:checked="true"
-                    android:text="Incoming"
+                    android:text="@string/incoming"
                     android:id="@+id/incoming_filter"
                     android:layout_height="wrap_content" />
 
@@ -116,7 +115,7 @@
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:checked="true"
-                    android:text="Outgoing"
+                    android:text="@string/outgoing"
                     android:id="@+id/outgoing_filter"
                     android:layout_height="wrap_content" />
 
@@ -125,7 +124,7 @@
                     android:layout_weight="1"
                     android:checked="false"
                     android:id="@+id/favorites_filter"
-                    android:text="Favorites"
+                    android:text="@string/favorites"
                     android:layout_height="wrap_content" />
 
             </LinearLayout>

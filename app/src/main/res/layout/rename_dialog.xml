@@ -9,7 +9,7 @@
         android:id="@+id/name"
         android:singleLine="true"
         android:maxLength="30"
-        android:hint="Record Name"
+        android:hint="@string/record_name"
         android:layout_height="wrap_content" />
 
 </LinearLayout>

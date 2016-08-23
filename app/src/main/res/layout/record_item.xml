@@ -39,7 +39,6 @@ android:layout_centerInParent="true"
         <TextView
             android:layout_width="wrap_content"
             android:id="@+id/duration"
-            android:text="3m 2s"
             android:textColor="@color/black"
             android:layout_weight="1"
             android:layout_height="wrap_content" />
@@ -56,7 +55,6 @@ android:layout_centerInParent="true"
             <TextView
                 android:layout_width="wrap_content"
                 android:id="@+id/text"
-                android:text="text"
                 android:ellipsize="end"
                 android:textColor="@color/black"
                 android:gravity="center"
@@ -65,7 +63,6 @@ android:layout_centerInParent="true"
             <TextView
                 android:layout_width="wrap_content"
                 android:id="@+id/date"
-                android:text="17 december"
                 android:ellipsize="end"
                 android:gravity="center"
                 android:layout_height="wrap_content" />
@@ -74,7 +71,6 @@ android:layout_centerInParent="true"
                 android:layout_width="wrap_content"
                 android:id="@+id/phone"
                 android:layout_weight="1"
-                android:text="8485883822"
                 android:layout_height="wrap_content" />
 
         </LinearLayout>

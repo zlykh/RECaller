@@ -35,7 +35,6 @@
         android:layout_alignTop="@+id/img"
         android:layout_alignParentRight="true"
         android:layout_toRightOf="@+id/img"
-        android:text="text"
         android:textSize="18sp"
         android:ellipsize="end"
         android:gravity="center"
@@ -57,7 +56,6 @@
         android:layout_width="wrap_content"
         android:id="@+id/duration"
         android:layout_marginLeft="20dp"
-        android:text="3m 2s"
         android:textColor="@color/black"
         android:layout_weight="1"
         android:layout_height="wrap_content" />
@@ -67,7 +65,6 @@
         android:layout_width="wrap_content"
         android:id="@+id/phone"
         android:layout_weight="1"
-        android:text="8485883822"
         android:textColor="@color/black"
         android:layout_height="wrap_content" />
 

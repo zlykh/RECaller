@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="cancel">Отмена</string>
+    <string name="cleanup_10_sec"><![CDATA[Удалить <15 sec]]></string>
+    <string name="disable_notification">Откл. уведомления</string>
+    <string name="enable_notification">Вкл. уведомления</string>
+    <string name="main_popup_title">Редактирование</string>
+    <string name="no_calls">Записей не обнаружено</string>
+    <string name="notif_text">Звонок записан!</string>
+    <string name="ok">ОК</string>
+    <string name="rename_popup_title">Переименовать</string>
+    <string name="call_record_settings">Настройки записи</string>
+    <string name="delete">Удалить</string>
+    <string name="favorites">Избранные</string>
+    <string name="filter_settings">Фильтр</string>
+    <string name="incoming">Входящие</string>
+    <string name="outgoing">Исходящие</string>
+    <string name="rename_option">Переименовать</string>
+    <string name="record_incoming">Запись входящих</string>
+    <string name="record_name">Название записи</string>
+    <string name="record_outgoing">Запись исходящих</string>
+</resources>

@@ -1,14 +1,24 @@
 <resources>
-    <string name="app_name">RECaller</string>
+    <string name="app_name" translatable="false">RECaller</string>
     <string name="cleanup_10_sec"><![CDATA[Cleanup <15 sec]]></string>
-    <string name="shared_prefs">recaller</string>
+    <string name="shared_prefs" translatable="false">recaller</string>
     <string name="notif_text">The call has been recorded</string>
-    <string name="recaller">RECaller</string>
+    <string name="recaller" translatable="false">RECaller</string>
     <string name="main_popup_title">Record options</string>
     <string name="cancel">Cancel</string>
     <string name="ok">OK</string>
     <string name="rename_popup_title">Rename the record</string>
+    <string name="rename_option">Rename</string>
     <string name="no_calls">You don\'t have any recorded calls</string>
     <string name="disable_notification">Disable notification</string>
     <string name="enable_notification">Enable notification</string>
+    <string name="delete">Delete</string>
+    <string name="record_name">Record Name</string>
+    <string name="call_record_settings">Call record Settings</string>
+    <string name="record_incoming">Record incoming</string>
+    <string name="record_outgoing">Record outgoing</string>
+    <string name="filter_settings">Filter settings</string>
+    <string name="incoming">Incoming</string>
+    <string name="outgoing">Outgoing</string>
+    <string name="favorites">Favorites</string>
 </resources>
